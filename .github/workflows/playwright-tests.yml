@@ -16,7 +16,7 @@ jobs:
   tests:
     strategy:
       matrix:
-        browser-platform: ["Desktop Chrome", "iPhon12", "Desktop Firefox"]
+        browser-platform: ["Desktop Chrome", "iPhone 12", "Desktop Firefox"]
 
     name: 'Playwright Tests'
     runs-on: ubuntu-latest
