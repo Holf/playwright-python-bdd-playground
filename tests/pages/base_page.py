@@ -1,10 +1,11 @@
-from playwright.sync_api import Page
+from playwright.sync_api import Page, expect
 
 
 class IsomorphicLabsWebPage:
     domain = 'www.isomorphiclabs.com'
     baseUrl = 'https://' + domain
     path = ''
+    page_title = ''
 
     def __init__(self, page: Page) -> None:
         self.page = page
@@ -24,6 +25,9 @@ class IsomorphicLabsWebPage:
 
     def load(self) -> None:
         self.page.goto(self.url)
+
+    def verify_page_title(self) -> None:
+        expect(self.page).to_have_title(self.page_title)
 
     def click_on_workWithUs(self) -> None:
         self.page.get_by_role(

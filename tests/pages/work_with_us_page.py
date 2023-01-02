@@ -4,6 +4,7 @@ from .base_page import IsomorphicLabsWebPage
 
 class IsomorphicLabsWorkWithUsPage(IsomorphicLabsWebPage):
     path = 'work-with-us'
+    page_title = 'Work With Us - Isomorphic Labs'
 
     def __init__(self, page: Page) -> None:
         super().__init__(page)
