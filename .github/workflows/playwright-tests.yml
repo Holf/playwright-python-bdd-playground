@@ -13,7 +13,10 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  tests:
+    strategy:
+      matrix:
+        browser-platform: ["Desktop Chrome", "iPhone 12", "Desktop Firefox"]
 
     name: 'Playwright Tests'
     runs-on: ubuntu-latest
@@ -32,4 +35,4 @@ jobs:
       - name: Ensure browsers are installed
         run: python -m playwright install --with-deps
       - name: Run your tests
-        run: python -m pytest tests --numprocesses auto
+        run: python -m pytest tests --device="${{ matrix.browser-platform }}" --numprocesses auto
