@@ -1,13 +1,13 @@
 import pytest
 
-from pages.result import DuckDuckGoResultPage
-from pages.search import DuckDuckGoSearchPage
+from pages.home_page import IsomorphicLabsHomePage
+from pages.work_with_us_page import IsomorphicLabsWorkWithUsPage
 from playwright.sync_api import Page
 
 @pytest.fixture
-def result_page(page: Page) -> DuckDuckGoResultPage:
-    return DuckDuckGoResultPage(page)
+def home_page(page: Page) -> IsomorphicLabsHomePage:
+    return IsomorphicLabsHomePage(page)
 
 @pytest.fixture
-def search_page(page: Page) -> DuckDuckGoSearchPage:
-    return DuckDuckGoSearchPage(page)
+def work_with_us_page(page: Page) -> IsomorphicLabsWorkWithUsPage:
+    return IsomorphicLabsWorkWithUsPage(page)
