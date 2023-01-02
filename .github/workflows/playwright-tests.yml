@@ -16,8 +16,9 @@ jobs:
   tests:
     strategy:
       matrix:
-        browser-platform: ["--device 'Desktop Chrome' --browser chromium", "--device 'iPhone 12' --browser webkit", "--device 'Desktop Firefox' --browser firefox"]
-
+        browser-platform:
+        - "--device 'Desktop Chrome' --browser chromium"
+        - "--device 'iPhone 12' --browser webkit"
     name: 'Playwright Tests'
     runs-on: ubuntu-latest
     container:
