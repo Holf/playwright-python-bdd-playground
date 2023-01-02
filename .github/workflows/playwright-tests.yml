@@ -16,7 +16,7 @@ jobs:
   tests:
     strategy:
       matrix:
-        browser-platform: ["Desktop Chrome", "iPhone 12", "Desktop Firefox"]
+        browser-platform: ["--device 'Desktop Chrome' --browser chromium", "--device 'iPhone 12' --browser webkit", "--device 'Desktop Firefox' --browser firefox"]
 
     name: 'Playwright Tests'
     runs-on: ubuntu-latest
@@ -35,4 +35,4 @@ jobs:
       - name: Ensure browsers are installed
         run: python -m playwright install --with-deps
       - name: Run your tests
-        run: python -m pytest tests --device="${{ matrix.browser-platform }}" --numprocesses auto
+        run: python -m pytest tests ${{ matrix.browser-platform }} --numprocesses auto
