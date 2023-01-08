@@ -18,8 +18,11 @@ def work_with_us_page(page: Page) -> IsomorphicLabsWorkWithUsPage:
 
 
 def pytest_addoption(parser):
-    parser.addoption("--use-non-playwright-chromium",
-                     action="store", default="false", help="Playwright will try to use installed Chromium instead of the the Playwright-bundled version")
+    parser.addoption(
+        "--use-non-playwright-chromium",
+        action="store",
+        default="false",
+        help="Playwright will try to use installed Chromium instead of the the Playwright-bundled version")
 
 
 def __get_is_non_playwright_chromium_specified(request):
