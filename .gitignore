@@ -130,3 +130,6 @@ dmypy.json
 
 # VS Code
 .vscode/settings.json
+
+# Playwright
+tests/snapshot_tests_failures
