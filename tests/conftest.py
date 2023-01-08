@@ -22,7 +22,7 @@ def pytest_addoption(parser):
         "--use-non-playwright-chromium",
         action="store",
         default="false",
-        help="Playwright will try to use installed Chromium instead of the the Playwright-bundled version")
+        help="Use preinstalled Chromium instead of the the Playwright-bundled version")
 
 
 def __get_is_non_playwright_chromium_specified(request):
