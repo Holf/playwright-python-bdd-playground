@@ -9,13 +9,16 @@ class IsomorphicLabsWebPage:
 
     def __init__(self, page: Page) -> None:
         self.page = page
-        self.__set_cookieBannerDismissed_state()
+        self.__set_cookieBannerDismissed_state(self)
 
         self.url = self.__get_url()
 
-    def __set_cookieBannerDismissed_state(self) -> None:
-        self.page.context.add_cookies(
-            [{'domain': self.domain,
+    # My inclination is to use static methods, where possible, to improve performace.
+    # Is this useful in Python? The jury's out: https://stackoverflow.com/questions/37472419/speed-static-methods-vs-class-method
+    @staticmethod
+    def __set_cookieBannerDismissed_state(webPage) -> None:
+        webPage.page.context.add_cookies(
+            [{'domain': webPage.domain,
              'path': '/',
               'name': 'CookieConsent',
               'value': '{stamp:%27PkEKxWD2rmtylS/JL2c09GB6n9jWO7PfXW17YxKg1OzCF8D2a1rdow==%27%2Cnecessary:true%2Cpreferences:false%2Cstatistics:false%2Cmarketing:false%2Cmethod:%27explicit%27%2Cver:1%2Cutc:1672612493420%2Cregion:%27gb%27}'}])
