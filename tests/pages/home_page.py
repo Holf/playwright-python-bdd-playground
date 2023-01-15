@@ -1,11 +1,9 @@
 from playwright.sync_api import Page
-from .base_page import IsomorphicLabsWebPage
+from .base_page import IsomorphicLabsBasePage
 
 
-class IsomorphicLabsHomePage(IsomorphicLabsWebPage):
+class IsomorphicLabsHomePage(IsomorphicLabsBasePage):
+    page_title = 'Reimagining Drug Discovery Process with AI - Isomorphic Labs'
 
-    def __init__(self, page: Page) -> None:
-        super().__init__(page)
-
-        self.workWithUs_link = page.get_by_role(
-            "link", name="work with us").first
+    def __init__(self, page: Page, assert_snapshot) -> None:
+        super().__init__(page, assert_snapshot)

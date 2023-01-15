@@ -4,7 +4,7 @@ from playwright.sync_api import expect, Page
 from pytest_bdd import scenario, given, when, then
 
 
-@scenario('tests.feature',
+@scenario('navigation.feature',
           'user can navigate from the Home page to the Work With Us page')
 def test_is_starting():
 
