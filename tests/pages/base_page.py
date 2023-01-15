@@ -35,7 +35,7 @@ class IsomorphicLabsBasePage:
         # TODO: Sleeps are evil. With more time I'd find a
         # way to know when the page is ready for snapshotting.
         time.sleep(3)
-        self.assert_snapshot(self.page.screenshot(path="goob.png"))
+        self.assert_snapshot(self.page.screenshot())
 
     def click_on_workWithUs(self) -> None:
         self.page.get_by_role(
