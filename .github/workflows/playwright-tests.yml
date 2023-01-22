@@ -39,3 +39,8 @@ jobs:
       run: python -m playwright install --with-deps
     - name: Run your tests
       run: HOME=/root python -m pytest tests ${{ matrix.browser-platform }} --gherkin-terminal-reporter -vv
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v3
+      with:
+        name: failed snapshots
+        path: tests/snapshot_tests_failures
