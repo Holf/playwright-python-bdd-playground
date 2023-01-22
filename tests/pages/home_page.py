@@ -5,5 +5,5 @@ from .base_page import IsomorphicLabsBasePage
 class IsomorphicLabsHomePage(IsomorphicLabsBasePage):
     page_title = 'Reimagining Drug Discovery Process with AI - Isomorphic Labs'
 
-    def __init__(self, page: Page, assert_snapshot) -> None:
-        super().__init__(page, assert_snapshot)
+    def __init__(self, page: Page, assert_snapshot, browser_type) -> None:
+        super().__init__(page, assert_snapshot, browser_type)

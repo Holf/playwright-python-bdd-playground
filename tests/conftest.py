@@ -8,10 +8,10 @@ from colab_utils.setup_non_playwright_chromium_option import *
 
 
 @pytest.fixture
-def home_page(page: Page, assert_snapshot) -> IsomorphicLabsHomePage:
-    return IsomorphicLabsHomePage(page, assert_snapshot)
+def home_page(page: Page, assert_snapshot, browser_type) -> IsomorphicLabsHomePage:
+    return IsomorphicLabsHomePage(page, assert_snapshot, browser_type)
 
 
 @pytest.fixture
-def work_with_us_page(page: Page, assert_snapshot) -> IsomorphicLabsWorkWithUsPage:
-    return IsomorphicLabsWorkWithUsPage(page, assert_snapshot)
+def work_with_us_page(page: Page, assert_snapshot, browser_type) -> IsomorphicLabsWorkWithUsPage:
+    return IsomorphicLabsWorkWithUsPage(page, assert_snapshot, browser_type)

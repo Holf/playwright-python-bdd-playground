@@ -1,5 +1,6 @@
 from playwright.sync_api import Page, expect
 import time
+import platform
 
 
 class IsomorphicLabsBasePage:
@@ -8,9 +9,10 @@ class IsomorphicLabsBasePage:
     path = ''
     page_title = ''
 
-    def __init__(self, page: Page, assert_snapshot) -> None:
+    def __init__(self, page: Page, assert_snapshot, browser_type) -> None:
         self.page = page
         self.assert_snapshot = assert_snapshot
+        self.browser_type = browser_type
         self.__set_cookieBannerDismissed_state()
 
         self.url = self.__get_url()
@@ -31,11 +33,12 @@ class IsomorphicLabsBasePage:
     def verify_page_title(self) -> None:
         expect(self.page).to_have_title(self.page_title)
 
-    def verify_visual_snapshot(self) -> None:
+    def verify_visual_snapshot(self, snapshotName: str) -> None:
         # TODO: Sleeps are evil. With more time I'd find a
         # way to know when the page is ready for snapshotting.
         time.sleep(3)
-        self.assert_snapshot(self.page.screenshot())
+        self.assert_snapshot(self.page.screenshot(
+        ), name=f"{snapshotName}[{self.browser_type.name}][{str(platform.system().lower())}].png")
 
     def click_on_workWithUs(self) -> None:
         self.page.get_by_role(

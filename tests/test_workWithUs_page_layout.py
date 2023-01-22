@@ -18,4 +18,4 @@ def click_on_work_with_us(
 def verify_snapshot(
         work_with_us_page: IsomorphicLabsWorkWithUsPage) -> None:
 
-    work_with_us_page.verify_visual_snapshot()
+    work_with_us_page.verify_visual_snapshot("work_with_us")

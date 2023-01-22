@@ -18,8 +18,8 @@ jobs:
       matrix:
         browser-platform:
         - "--device 'Desktop Chrome' --browser chromium"
-        # - "--device 'iPhone 12' --browser webkit"
-        # - "--device 'Desktop Firefox' --browser firefox"
+        - "--device 'iPhone 12' --browser webkit"
+        - "--device 'Desktop Firefox' --browser firefox"
     name: 'Playwright Tests'
     runs-on: ubuntu-latest
     container:
