@@ -19,3 +19,5 @@ coverage.xml
 .pytest_cache
 .hypothesis
 tests/snapshot_tests_failures
+tests.json
+*Tests.html

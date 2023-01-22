@@ -133,3 +133,5 @@ dmypy.json
 
 # Playwright
 tests/snapshot_tests_failures
+tests.json
+*Tests.html
